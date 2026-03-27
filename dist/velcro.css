@@ -1,0 +1,25 @@
+/* Velcro v0.1 */
+
+.v-letter {
+  height: 1em;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: middle;
+
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+  transition: transform 0.15s ease;
+}
+
+.v-letter:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.v-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.v-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
