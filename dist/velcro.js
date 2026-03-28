@@ -1,8 +1,8 @@
 /* Velcro v0.1 */
 (function () {
   function getMacaroniSrc(char) {
-    if (char === ' ') return 'https://cdn.jsdelivr.net/gh/cookieoperation/Velcro-css@main/assets/macaroni/space.png';
-    if (/^[A-Da-d]$/.test(char)) return `https://cdn.jsdelivr.net/gh/cookieoperation/Velcro-css@main/assets/macaroni/${char.toUpperCase()}.png`;
+    if (char === ' ') return './assets/macaroni/space.png';
+    if (/^[A-Da-d]$/.test(char)) return `./assets/macaroni/${char.toUpperCase()}.png`;
     return null;
   }
 
