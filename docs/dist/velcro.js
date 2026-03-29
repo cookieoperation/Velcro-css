@@ -16,16 +16,24 @@
       : './assets/macaroni/');
 
   function getMacaroniSrc(char) {
-    if (char === ' ') return `${assetBase}space.png`;
     if (/^[A-Da-d]$/.test(char)) return `${assetBase}${char.toUpperCase()}.png`;
     return null;
   }
 
   function renderMacaroni(el) {
-    const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    const text = el.textContent || '';
     el.textContent = '';
 
     for (const ch of text) {
+      if (ch === ' ') {
+        const spacer = document.createElement('span');
+        spacer.className = 'v-space';
+        spacer.setAttribute('aria-hidden', 'true');
+        spacer.textContent = '\u00A0';
+        el.appendChild(spacer);
+        continue;
+      }
+
       const src = getMacaroniSrc(ch);
       if (!src) {
         el.appendChild(document.createTextNode(ch));
