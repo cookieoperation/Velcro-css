@@ -21,6 +21,9 @@
       img.className = 'v-letter';
       img.alt = ch === ' ' ? 'space' : ch;
       img.src = src;
+      img.addEventListener('error', () => {
+        img.replaceWith(document.createTextNode(ch));
+      });
       el.appendChild(img);
     }
   }
