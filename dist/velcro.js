@@ -1,8 +1,14 @@
 /* Velcro v0.1 */
 (function () {
+  const currentScript = document.currentScript;
+  const assetBase =
+    currentScript && currentScript.src
+      ? new URL('../assets/macaroni/', currentScript.src).href
+      : './assets/macaroni/';
+
   function getMacaroniSrc(char) {
-    if (char === ' ') return './assets/macaroni/space.png';
-    if (/^[A-Da-d]$/.test(char)) return `./assets/macaroni/${char.toUpperCase()}.png`;
+    if (char === ' ') return `${assetBase}space.png`;
+    if (/^[A-Da-d]$/.test(char)) return `${assetBase}${char.toUpperCase()}.png`;
     return null;
   }
 
